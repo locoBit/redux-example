@@ -1,11 +1,11 @@
-import { FIND_RESULTS } from './../actions/findResults';
+import { FIND_SUGGESTIONS } from './../actions/findSuggestions';
 import items from './../../data/items';
 
 const defaultState = [];
 
 function reducer(state = defaultState, { type, payload }) {
   switch (type) {
-  case FIND_RESULTS: {
+  case FIND_SUGGESTIONS: {
     const regex = new RegExp(`^${payload}`, 'i');
 
     return items.filter(item => regex.test(item.title));
